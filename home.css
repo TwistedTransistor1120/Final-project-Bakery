@@ -1,0 +1,563 @@
+.counter {
+    cursor: pointer;
+}
+
+
+
+
+/*main________________________________________________*/
+.main {
+    margin-top: 67px;
+}
+@media all and (min-width: 570px) {
+    .main {
+        margin-top: 87px;
+    }
+}
+
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    /*height: calc(100vh - 87px); */
+    
+   
+    
+   
+}
+
+
+.slider__wrapper {
+	position: relative;
+	left: 0px;
+    max-height: calc(100vh - 87px);
+    
+}
+.slider__wrapper li {
+    padding: 0;
+
+}
+.slider__left-button,
+.slider__right-button {
+	position: absolute;
+	top: 50%;
+	left: 50px;
+	width: 50px;
+	height: 50px;
+	border: 2px solid #c9780f;
+	border-radius: 50%;
+	box-shadow: 0 0 10px 10px black;
+	transition: all .3s ease;
+	transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 3;
+}
+.slider__right-button {
+	left: auto;
+	right: 50px;
+}
+
+
+@media (max-width: 490px) {
+    .slider__left-button, .slider__right-button {
+        width: 30px;
+        height: 30px;
+        box-shadow: 0 0 5px 5px;
+    }
+}
+@media (max-width: 450px) {
+    .slider__left-button {
+        left: 20px;
+    }
+    .slider__right-button {
+        right: 20px;
+    }
+}
+
+
+
+
+.slider__left-button:hover,
+.slider__right-button:hover {
+	opacity: .7;
+}
+
+.slider__nav {
+	position: absolute;
+	left: 50%;
+	bottom: 30px;
+	transform: translateX(-50%);
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.slider__nav-button {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	padding: 0;
+	border-radius: 50%;
+	border: 2px solid black;
+	background-color: white;
+	cursor: pointer;
+    transition: all .3s ease;
+    
+}
+
+.slider__nav-button + .slider__nav-button {
+	margin-left: 5px;
+}
+
+.slider__nav-button:hover {
+	opacity: .6;
+}
+
+.slider__nav-button.slider__nav-button--active {
+	border-color: white;
+	background-color: black;
+}
+
+.slider__wrapper {
+	overflow: hidden;
+}
+
+.slider__item {
+	height: auto;
+	float: left;
+}
+
+
+
+
+.tagline {
+   background-color: rgba(0,0,0,.5);
+   z-index: 2;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   max-height: calc(100vh - 87px);
+}
+.mainTagline {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    transform: translateY(-50%) translateX(-50%) ;
+    text-align: center;
+    color: white;
+}
+.mainTagline h1 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-family: 'Kaushan Script', cursive;
+}
+@media (min-width: 510px) and (max-width: 1024px) {
+    .mainTagline h1 {
+        font-size: 5rem;
+    }
+}
+@media (min-width: 1024px) {
+    .mainTagline h1 {
+        font-size: 8rem;
+    }
+}
+.mainTagline h4 {
+    font-family: 'Kaushan Script', cursive;
+}
+
+.tagline2 {
+    margin-top: 2.5rem;
+
+}
+@media all and (min-width: 510px) {
+    .topHeaders {
+        font-size: 1.5rem;
+    }
+}
+
+@media all and (min-width: 510px) {
+    .topHeadersSmall {
+        font-size: 1rem;
+    }
+}
+
+.products {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start; 
+    align-items: center;
+}
+.unitGoods {
+    border: 2px solid #c9780f;
+    border-radius: 20px;
+    margin: 10px 4px;
+    text-align: center;
+    padding: 0 10% 7px; 
+}
+.products img {
+    display: block;
+    margin: 10px auto;
+    width: 100%;
+    border-radius: 60px;
+}
+.nameUnit {
+    text-transform: uppercase;
+    font-weight: 700;
+    max-height: 2rem;
+   
+}
+.descriptionUnit {
+    max-height: 3rem;
+    overflow: hidden;
+    margin: 4px auto;
+}
+@media all and (min-width: 510px) {
+    .products {
+        flex-flow: row nowrap;
+        justify-content: center 
+    }
+    .unitGoods {
+        padding: 0 10px 7px; 
+    }
+}
+.buttonViewMoreBreads {
+    background-color: #c9780f;
+    color:white;
+    border:none;
+    padding: 6px 15px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 4px rgba(0,0,0, .75);
+    display: block;
+    margin: 10px auto;
+    transition: all .3s ease;
+}
+.buttonViewMoreBreads a {
+    color: white;
+}
+.buttonViewMoreBreads:focus {
+    outline: none;
+}
+.buttonViewMoreBreads:hover {
+    background-color:orangered;
+    transition: all .3s ease;
+}
+.buttonViewMoreBreads:active {
+    transform: translate(1px,2px);
+    transition: all .3s ease;
+}
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 30px 0; 
+}
+.gallery .foto1 {
+    position: relative;
+}
+.gallery .foto1, .gallery .foto2 {
+    width: 100%;
+}
+.gallery .foto2, .gallery .foto3, .gallery .foto4,  .gallery .foto5 {
+    width: 50%
+}
+@media all and (min-width: 510px) {
+    .gallery {
+        display: grid;
+        grid: [row1-start] "foto1 foto2 foto3" auto [row1-end]
+              [row2-start] "foto1 foto4 foto5" auto [row2-end]
+              / 40% 30% 30%;
+    } 
+    .gallery .foto1 {
+        grid-area: foto1
+    }
+    .gallery .foto2 {
+        grid-area: foto2;
+        width: 100%;
+    }
+    .gallery .foto3 {
+        grid-area: foto3;
+        width: 100%;
+    }
+    .gallery .foto4 {
+        grid-area: foto4;
+        width: 100%;
+    }
+    .gallery .foto5 {
+        grid-area: foto5;
+        width: 100%;
+    }
+}
+
+.blockquoteOfDay {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 50%;
+    left: 0;
+    background-color: rgba(0,0,0, .75);
+   
+    
+}
+.wrapperBlockquote {
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-align: center;
+}
+.wrapperBlockquote blockquote {
+    font-size: 2rem;
+}
+@media (max-width: 1124px) {
+    .wrapperBlockquote span {
+        font-size: 1rem;
+    }
+    .wrapperBlockquote blockquote {
+        font-size: 1rem;
+    }
+}
+.wrapperBlockquote > span {
+    text-transform: capitalize;
+    font-family: 'Kaushan Script', cursive;
+    color: #c9780f;
+}
+
+.inNumbers  {
+    margin: 30px 0;
+}
+.wrapperNumbers {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.block {
+    width: 40%;
+    margin: 10px;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 10px;
+    border: 1px solid #c9780f;
+    background-color: #f7e49a;
+    transition: transform .4s linear;
+}
+@media (max-width: 400px) {
+    .wrapperNumbers {
+        flex-flow: column wrap;
+        align-items: center;
+    }
+    .block {
+        width: 80%;
+    }
+}
+.block:hover {
+    transform: scale(1.05);
+    transition: transform .4s linear;
+}
+.block:focus {
+    outline: none;
+}
+.block ul {
+    width: 60%;
+}
+.block ul li {
+    text-align: left;
+}
+.block ul li:first-child {
+    text-transform: uppercase;
+    font-weight: 800;
+}
+.block ul li:last-child {
+    color: #c9780f;
+    font-family: 'Kaushan Script', cursive;
+    font-size: .7rem;
+}
+.block span {
+    display: block;
+    width: 40%;
+    text-align: right;
+    font-weight: 800;
+    font-size: 1.3rem;
+    margin: auto 0;
+    padding-right: 5px;
+}
+
+.history {
+    margin: 30px 0;
+}
+
+
+.historyList {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+}
+
+.year {
+    width: 20%;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid #c9780f;
+    border-radius: 20px;
+    margin-bottom: 3px;
+    padding: 5px 0;
+}
+
+.content {
+    overflow: hidden;
+    font-family: 'Kaushan Script', cursive;
+    border-radius: 60px;
+    color: rgba(201, 120, 15, 1);
+    box-shadow: inset 0 0 5px -1px #000;
+    max-height: 0px;
+    opacity: 0;
+ 
+}
+    
+.year__active {
+    background-color: #f7e49a;
+    font-weight: bold;
+    transition: all .5s;
+}
+.content__active {
+    max-height: 500px;
+    padding: 15px 50px;
+    background-color: #f7e49a;
+    opacity: 1;
+    transition: /*max-height .5s, */opacity 1.5s;
+} 
+
+
+
+.historyImage {
+    width: 95%;
+    display: block;
+    margin: 3px auto;
+}
+
+.newInBakery {
+    margin: 0 30px;
+}
+.wrapperNewProducts {
+    display: flex;
+    justify-content: space-between;
+}
+
+.unitNewGoods {
+    padding: 6px 5px;
+    width: 32%;
+    border: 2px ridge #c9780f;
+    background: #f7e49a;
+    text-align: center;
+    box-shadow: inset 0 0 10px -1px #000;
+    border-radius: 60px;
+ 
+}
+
+.imageNewProducts {
+    overflow: hidden;
+    border-radius: 60px;
+}
+.imageNewProducts img {
+    transition: transform .5s;
+    
+}
+.imageNewProducts img:hover {
+    transform: scale(1.1);
+    transition: transform .5s;
+}
+
+@media (max-width: 510px) {
+    .wrapperNewProducts {
+        flex-flow: column nowrap;
+        width: 100%;
+    }
+    .unitNewGoods {
+        width: 80%;
+        margin: 20px auto;
+        
+    }
+
+}
+.nameNewUnit, .price, .addToCart {
+    display: block;
+    margin: 5px 0;
+}
+.nameNewUnit {
+    text-transform: uppercase;
+    font-family: 'Kaushan Script', cursive;
+    max-height: 3rem;
+}
+.price {
+    font-weight: bold;
+    font-size: 2rem;
+}
+.btnAddToCart:focus {
+    outline: none;
+    
+}
+.btnAddToCart {
+    background: #c9780f;
+    border: 1px solid #522f01;
+    margin: 15px auto 20px auto;
+    padding: 10px;
+    border-radius: 15px;
+    transition: all .5s;
+}
+.btnAddToCart:hover {
+    background: white;
+    font-weight: bold;
+    color: #c9780f;
+    box-shadow: none;
+    transition: all .5s; 
+    
+}
+.btnAddToCart:active {
+    transform: translate(1px,2px);
+    transition: all .5s; 
+}
+.bakerImageNewProducts {
+    width: 60%;
+    display: block;
+    margin: 10px auto;
+}
+
+
+
+
+.wrapperFooterBlock {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0 10%;
+}
+.wrapperFooterBlock ul li:first-child {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #c9780f;
+}
+
+@media (max-width: 510px) {
+    .wrapperFooterBlock {
+        font-size: 1rem;
+        flex-flow: column nowrap;
+    }
+    .wrapperFooterBlock div {
+        margin-bottom: 20px;
+    }
+    .signs {
+        padding: 20px 50px;
+        
+    }
+}  

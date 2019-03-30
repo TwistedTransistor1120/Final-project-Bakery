@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bakery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Karla|Nova+Mono|Kaushan+Script" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="products.css">
+    
+    
+</head>
+<body>
+    <header>
+        <div class="headerTop">
+            <span class="address"><span class="glyphicon glyphicon-home"></span> 123, New Lenox Chicago, IL 60606</span>
+            <span class="tel">
+                <span>call us</span>
+                <span><span class="glyphicon glyphicon-earphone"></span> 123-456-7890</span>
+            </span>
+        </div>
+        <div class="navLine" >
+            <picture class="logo">
+                <a href="index.html">
+                    <img  class="logo-img" src="assets/logo.png" alt="logotype">
+                </a> 
+            </picture>
+            <nav class="mainNav" id="nav">
+                <ul class="list">
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="" class="link-active">products</a></li> 
+                    <li><a href="">about</a></li>
+                    <li><a href="contacts.html">contacts</a></li>
+                    <li><a href="">blog</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" id="jsBurger">
+                <span class="hamburger_icon"></span>
+            </button>
+            
+            <ul class="counter" id="js-counter">
+                <li>cart</li>
+                <li class="cart" id="js-cart"></li>
+            </ul>
+            
+        </div> 
+    </header>
+
+    <main class="newInBakery">
+        <h3 class="topHeaders">choose your products</h3>
+        <img class="wheelLogo" src="assets/logo_wheel.png" alt="wheel">
+        
+        <div class="wrapperNewProducts">
+            <div class="unitNewGoods">
+                <figure class="imageNewProducts">
+                    <img class="imageProduct" src="assets/products/product_banana-bread-c.jpg" alt="unitNewGoods">
+                </figure>
+                <span class="nameNewUnit">banana bread</span>
+                <span class="price"><span class="dollars">$9.</span><sup class="cents">99</sup></span>
+                <button class="btnAddToCart" >add to cart</button>
+            </div>
+            <div class="unitNewGoods">
+                <figure class="imageNewProducts">
+                    <img class="imageProduct" src="assets/products/product_brown-blondies-c.jpg" alt="unitNewGoods">
+                </figure>
+                <span class="nameNewUnit">brown blondies</span>
+                <span class="price"><span class="dollars">$7.</span><sup class="cents">75</sup></span>
+                <button class="btnAddToCart">add to cart</button>
+            </div>
+            <div class="unitNewGoods">
+                <figure class="imageNewProducts">   
+                    <img class="imageProduct" src="assets/products/product_cake-carrotcake.jpg" alt="unitNewGoods">
+                </figure>
+                <span class="nameNewUnit">cake carrotcake</span>
+                <span class="price"><span class="dollars">$6.</span><sup class="cents">99</sup></span>
+                <button class="btnAddToCart">add to cart</button>
+            </div>
+            <div class="unitNewGoods">
+                <figure class="imageNewProducts">
+                    <img class="imageProduct" src="assets/products/product_choux-c.jpg" alt="unitNewGoods">
+                </figure>
+                <span class="nameNewUnit">choux pastry</span>
+                <span class="price"><span class="dollars">$2.</span><sup class="cents">38</sup></span>
+                <button class="btnAddToCart" >add to cart</button>
+            </div>
+            <div class="unitNewGoods">
+                <figure class="imageNewProducts">
+                    <img class="imageProduct" src="assets/products/product_choux-chocolate_gold-c.jpg" alt="unitNewGoods">
+                </figure>
+                <span class="nameNewUnit">choux chocolate</span>
+                <span class="price"><span class="dollars">$5.</span><sup class="cents">28</sup></span>
+                <button class="btnAddToCart">add to cart</button>
+            </div>
+            <div class="unitNewGoods">
+                <figure class="imageNewProducts">   
+                    <img class="imageProduct" src="assets/products/product_coffeecake-c.jpg" alt="unitNewGoods">
+                </figure>
+                <span class="nameNewUnit">coffee cake</span>
+                <span class="price"><span class="dollars">$3.</span><sup class="cents">19</sup></span>
+                <button class="btnAddToCart">add to cart</button>
+            </div>
+            <div class="unitNewGoods">
+                <figure class="imageNewProducts">
+                    <img class="imageProduct" src="assets/products/product_cookiesubscription-c.jpg" alt="unitNewGoods">
+                </figure>
+                <span class="nameNewUnit">cookies</span>
+                <span class="price"><span class="dollars">$5.</span><sup class="cents">05</sup></span>
+                <button class="btnAddToCart" >add to cart</button>
+            </div>
+            <div class="unitNewGoods">
+                <figure class="imageNewProducts">
+                    <img class="imageProduct" src="assets/products/product_dark-chocolate-brownies-c.jpg" alt="unitNewGoods">
+                </figure>
+                <span class="nameNewUnit">dark chocolate brownies</span>
+                <span class="price"><span class="dollars">$8.</span><sup class="cents">95</sup></span>
+                <button class="btnAddToCart">add to cart</button>
+            </div>
+            <div class="unitNewGoods">
+                <figure class="imageNewProducts">   
+                    <img class="imageProduct" src="assets/products/product_dark-chocolate-explosions-c.jpg" alt="unitNewGoods">
+                </figure>
+                <span class="nameNewUnit">dark chocolate explosions</span>
+                <span class="price"><span class="dollars">$10.</span><sup class="cents">50</sup></span>
+                <button class="btnAddToCart">add to cart</button>
+            </div>
+            <div class="unitNewGoods">
+                <figure class="imageNewProducts">
+                    <img class="imageProduct" src="assets/products/product_donuts-c.jpg" alt="unitNewGoods">
+                </figure>
+                <span class="nameNewUnit">donuts</span>
+                <span class="price"><span class="dollars">$4.</span><sup class="cents">12</sup></span>
+                <button class="btnAddToCart" >add to cart</button>
+            </div>
+            <div class="unitNewGoods">
+                <figure class="imageNewProducts">
+                    <img class="imageProduct" src="assets/products/product_lemon-meringue-c_21q3xNz.jpg" alt="unitNewGoods">
+                </figure>
+                <span class="nameNewUnit">lemon meringue</span>
+                <span class="price"><span class="dollars">$7.</span><sup class="cents">98</sup></span>
+                <button class="btnAddToCart">add to cart</button>
+            </div>
+            <div class="unitNewGoods">
+                <figure class="imageNewProducts">   
+                    <img class="imageProduct" src="assets/products/product_linzers-c.jpg" alt="unitNewGoods">
+                </figure>
+                <span class="nameNewUnit">linzers</span>
+                <span class="price"><span class="dollars">$7.</span><sup class="cents">79</sup></span>
+                <button class="btnAddToCart">add to cart</button>
+            </div>
+            <div class="unitNewGoods">
+                <figure class="imageNewProducts">
+                    <img class="imageProduct" src="assets/products/product_mzd-bar-c.jpg" alt="unitNewGoods">
+                </figure>
+                <span class="nameNewUnit">peanut pastry</span>
+                <span class="price"><span class="dollars">$0.</span><sup class="cents">99</sup></span>
+                <button class="btnAddToCart" >add to cart</button>
+            </div>
+            <div class="unitNewGoods">
+                <figure class="imageNewProducts">
+                    <img class="imageProduct" src="assets/products/product_peanut-brittle-c_AuQQng5.jpg" alt="unitNewGoods">
+                </figure>
+                <span class="nameNewUnit">peanut brittle</span>
+                <span class="price"><span class="dollars">$11.</span><sup class="cents">64</sup></span>
+                <button class="btnAddToCart">add to cart</button>
+            </div>
+        
+        </div>
+        <img class="bakerImageNewProducts" src="assets/baker.png" alt="baker">
+    </main>
+
+    <div id="orderList">
+        <button class="btnCloseOrderList" id="js-closeOrderList">
+            <span class="close_icon"></span>
+        </button>
+        <span class="headerOrderList">Your order</span>
+        <span class="empty hideElem" id="js-empty">your card is empty :((</span>
+        <div id="wrapperTable">
+
+        </div>
+        <div class="wrapperButtons hideElem" id="js-wrapperButtons">
+            <button class="btnClear" id="js-btnClear">clear</button>
+            <button class="btnPay" id="js-btnPay">pay</button>
+        </div>
+    </div>
+
+    <div id="buyProducts">
+        <span class="buyHeader">Thank you so much for your purchase!</span>
+        <div class="wrapperImage">
+            <img class="buyImage" src="assets/thankForBuy.gif" alt="thankForBuy">   
+        </div>
+      
+
+    </div>
+
+  
+
+    <footer>
+        <div class="wrapperFooterBlock">
+            <div class="email">
+                <ul>
+                    <li>email address</li>
+                    <li><a href="/">info@yoursite.com</a></li>
+                    <li><a href="/">www.yoursite.com</a></li>
+                </ul>
+            </div>
+            <div class="phoneFax">
+                <ul>
+                    <li>phone & fax</li>
+                    <li>+38(050)123-45-67</li>
+                    <li>+38(050)123-45-67</li>
+                </ul>
+            </div>
+            <div class="bakeryLocation">
+                <ul>
+                    <li>bakery's location</li>
+                    <li>176 w street Name</li>
+                    <li>Kyiv 02094</li>
+                </ul>
+            </div>
+        </div>
+        <div class="signs">
+            <span class="fa fa-facebook"></span>
+            <span class="fa fa-instagram"></span>
+            <span class="fa fa-google"></span>
+            <span class="fa fa-skype"></span>
+
+        </div>
+        <span>all rights reserved 2019</span>
+
+    </footer>
+    
+  
+
+
+
+    <script src="common.js"></script>
+    <script src="products.js"></script>
+    
+</body>
+</html>

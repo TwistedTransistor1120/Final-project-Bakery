@@ -1,0 +1,150 @@
+.main {
+    margin-top: 80px;
+    font-family: 'Kaushan Script', cursive;
+   
+}
+
+.wrapper {
+    display: flex;
+    margin: 20px auto 0;
+    width: 80%;
+    background-color: #ffd900;
+    padding: 10px 0;
+    border-radius: 20px;
+}
+
+.form {
+    display: flex;
+    flex-flow: row wrap;
+    width: 65%;
+    padding: 10px 30px;
+    
+}
+.headersContact {
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+.name {
+    margin: 0 2% 20px 0;
+    width: 49%
+}
+.email {
+    width: 49%;
+    margin-bottom: 20px;
+}
+.message {
+    width: 100%;
+    height: 200px;
+    resize: none;
+    text-overflow: ellipsis;
+    margin-bottom: 20px;
+}
+
+
+.adress {
+    width: 35%;
+}
+.form input, .message {
+    background-color: #f59313;
+    outline: none;
+    border: 1px solid red;
+    padding: 5px;
+    border-radius: 6px;
+    font-family: 'Kaushan Script', cursive;
+    transition: all .4s;
+    
+    
+}
+
+.form input:not(.send):focus, .message:focus {
+    outline: none;
+    background-color: white;
+    transition: all .4s;
+}
+.form input::placeholder, .message::placeholder {
+    color: white;
+}
+.form input:focus::placeholder, .message:focus::placeholder {
+    color: grey;
+}
+.form label {
+    width: 100%;
+    display: block;
+}
+#units, .labelChek {
+    display: inline-block;
+    margin-right: 20px;
+}
+.form .labelChek {
+    width: 30px;
+}
+form .send {
+    margin: -15px 0 0 auto;
+    width: 30%;
+    color: white;
+    transition: all .3s;
+
+}
+form .send:hover {
+    background-color: orangered;
+    transition: all .3s;
+}
+
+form .send:active {
+    transform: translate(1px,2px);    
+}
+.form .name, .form .email, .form .message, .send {
+    box-shadow: 2px 2px 5px black;
+    
+}
+
+.adress li ul li:first-child {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+.adress {
+    display: block;
+    margin: auto 0 auto 5%;
+}
+.emailUl li> a {
+    text-decoration: underline;
+    color: red;
+}
+.adress > li {
+    padding: 10px 0;
+} 
+
+@media (max-width:700px) {
+    .wrapper {
+        width: 100%;
+    }
+}
+@media (max-width:525px) {
+    .wrapper {
+        flex-flow: column wrap;
+    }
+    .form, .adress {
+        display: block;
+        width: 95%;
+        margin: 20px auto;
+    }
+    .adress {
+        padding-left: 15%;
+    }
+    .form label {
+        display: inline-block;
+    }
+    .name, .email {
+        width: 100%;
+    }
+    .form .send {
+        display: block;
+        width: 100px;
+        margin: 10px auto 0;
+    }
+}
+ 
