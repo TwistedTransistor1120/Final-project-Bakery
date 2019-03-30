@@ -147,4 +147,7 @@ form .send:active {
         margin: 10px auto 0;
     }
 }
- 
+
+.mapGoogle {
+    margin: 0 auto;
+}

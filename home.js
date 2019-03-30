@@ -1,8 +1,6 @@
 document.getElementById('js-counter')
 .addEventListener('click', () => {
     window.location='products.html';
-    /*let win = window.location;
-    win.onload = showTablePay();*/
 });
 
 
@@ -11,9 +9,8 @@ document.getElementById('js-counter')
 let widthItem = document.body.clientWidth,
 	currentWidthItem = widthItem,
 	currentLeft,
-	transitionSpeed = 1000;
-	
-let sliderContainer = document.getElementById('js-sliderContainer'),
+	transitionSpeed = 1000,
+	sliderContainer = document.getElementById('js-sliderContainer'),
 	sliderWrapper = document.getElementById('js-sliderWrapper'),
 	sliderCount = document.querySelectorAll('.slider__item').length,
 	sliderNav = document.createElement('div'),
@@ -31,6 +28,8 @@ for(let i=0; i < document.querySelectorAll('.slider__item').length; i++) {
 }
 sliderWrapper.style.left = -widthItem + 'px';
 
+/*_______________________response slider________________________________*/
+
 window.addEventListener("resize", ()=> {
 	widthItem = Math.round(document.body.clientWidth*10000)/10000;
 	let computedStyleWrapper = getComputedStyle(sliderWrapper);
@@ -42,7 +41,9 @@ window.addEventListener("resize", ()=> {
     }
     sliderWrapper.style.width = widthItem*(sliderCount+2) + 'px';
 	currentWidthItem = widthItem;
+
 });
+/*____________________________________________________________________*/
 
 function init() {
 	sliderNav.classList = 'slider__nav';
@@ -71,23 +72,11 @@ function init() {
 				sliderWrapper.style.left = -currentWidthItem*sliderCount + 'px';
 			}
 			currentSlide--;
-			console.log(currentSlide);
 			if (currentSlide === 0) currentSlide = sliderCount;
-			
-			
-			/*currentSlide--;
-			console.log(currentSlide);
-			console.log(sliderWrapper.style.left);
-			if(sliderWrapper.style.left === -currentWidthItem + 'px') {
-				currentSlide = sliderCount;
-				console.log(currentSlide);
-			};
-			console.log(currentSlide);*/
-
 			setTimeout(() => {
-				clickOnLeftButton();
+				let signLeft = '+';
+				clickOnButton(signLeft);
 			}, 10);
-			
 		}	
 	}, false);
 	
@@ -100,11 +89,10 @@ function init() {
 			} 
 			currentSlide++;
 			if (currentSlide === sliderCount+1) currentSlide = 1
-		 
 			setTimeout(() => {
-				clickOnRightButton();
+				let signRight = '-';
+				clickOnButton(signRight);
 			}, 10);
-			
 		}	
 	}, false);
 
@@ -112,36 +100,23 @@ function init() {
 	let allNavButtons = document.getElementsByClassName('slider__nav-button');
 	for(let i = 0; i < allNavButtons.length; i++) {
 		allNavButtons[i].setAttribute('data-number', i+1);
-		let a = allNavButtons[i].dataset.number;
+		allNavButtons[i].dataset.number;
 	} 
 }
 
-function clickOnLeftButton() {
-	sliderWrapper.style.transition = 'left ' + transitionSpeed/1000 + 's';
-	currentLeft = parseFloat(sliderWrapper.style.left);
-	sliderWrapper.style.left = currentLeft + currentWidthItem + 'px';
-	sliderWrapper.classList.add('isAnimating');
-	setTimeout(() => {
-		sliderWrapper.style.transition = '';
-		sliderWrapper.classList.remove('isAnimating');
-	}, transitionSpeed);
-	
-	currentWidthItem = widthItem;
-	setDot();
-};
 
-function clickOnRightButton() {
+
+function clickOnButton(x) {
 	sliderWrapper.style.transition = 'left ' + transitionSpeed/1000 + 's';
 	currentLeft = parseFloat(sliderWrapper.style.left);
-	sliderWrapper.style.left = currentLeft - currentWidthItem + 'px';
+	if (x == '+') sliderWrapper.style.left = currentLeft + currentWidthItem + 'px';
+	if (x == '-') sliderWrapper.style.left = currentLeft - currentWidthItem + 'px';
 	sliderWrapper.classList.add('isAnimating');
 	setTimeout(() => {
 		sliderWrapper.style.transition = '';
 		sliderWrapper.classList.remove('isAnimating');
 	}, transitionSpeed);
-	
 	currentWidthItem = widthItem;
-	console.log(currentWidthItem);
 	setDot();
 };
 
@@ -150,7 +125,6 @@ function setDot() {
 	for(let i = 0; i < allNavButtons.length; i++) {
 		allNavButtons[i].classList.remove('slider__nav-button--active');
 	};
-	console.log(currentSlide);
 	allNavButtons[currentSlide-1].classList.add('slider__nav-button--active');
 }
 
@@ -165,12 +139,10 @@ function clickOnNavButtons(event) {
 	sliderWrapper.style.left = -currentSlide*widthItem + 'px';
 	sliderWrapper.style.transition = 'left ' + transitionSpeed/1000 + 's';
 }
-function debounce (f, ms) {
-	let timer = null
-}
+
 init();
 
-/*_____________________________________________________*/ 
+/*_______end slider______________________________________________*/ 
 
 
 let allYears = document.getElementsByClassName('year'),
@@ -180,13 +152,6 @@ for (let i=0; i<allYears.length; i++) {
 	allYears[i].addEventListener('mouseover', ()=> {
 		
 		for (let j=0; j<allYears.length; j++) {
-			/*if (allContents[j].classList.contains('year__active')) {
-				let emptyDiv = allContents[j].cloneNode(true);
-				emptyDiv.innerHTML = '';
-				emptyDiv.style.height = '500px';
-
-				
-			}*/
 			allYears[j].classList.remove('year__active');
 			allContents[j].classList.remove('content__active');
 		}
@@ -195,5 +160,4 @@ for (let i=0; i<allYears.length; i++) {
 	})
 };
 
-let yearPosY = allYears[0].getBoundingClientRect().top + pageYOffset;
-console.log(yearPosY);
+
