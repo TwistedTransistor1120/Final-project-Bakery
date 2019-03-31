@@ -1,5 +1,5 @@
-let products = [], productsOnCart = [], d = document, maxAmount = 30,
-allProductsOnPage = document.getElementsByClassName("unitNewGoods");
+let products = [], productsOnCart = [], maxAmount = 30,
+    allProductsOnPage = document.getElementsByClassName("unitNewGoods");
 
 /*___________________creating array of all products on page__________________________*/
 
@@ -33,6 +33,13 @@ close.addEventListener("click", orderDisappear);
 let pay = document.getElementById("js-btnPay");
 pay.addEventListener("click", payOrder);
 /*_____________________________________________________*/
+
+/*__________________check if it crossing from another page________________*/
+if(sessionStorage.getItem("fromAnotherPage") == 1) {
+    createPaymentTable(); 
+    sessionStorage.setItem("fromAnotherPage", "0");
+}
+/*___________________________________________________________*/
 
 
 function createPaymentTable() {
@@ -99,7 +106,7 @@ function createPaymentTable() {
                 td3.appendChild(inputAmount).value = productsOnCart[i]["amount"];
                 td3.appendChild(btnInc).innerHTML = '+'; btnInc.classList.add('btnIncrease');
             tr.appendChild(td4); td4.classList.add('tdPriceAmount');
-                td4.innerHTML = '$ ' + (Math.round(productsOnCart[i]["priceAmount"]*100)/100);
+                td4.innerHTML = '$ ' + (Math.round(productsOnCart[i]["priceAmount"]*100)/100).toFixed(2);
         }
     };
 
@@ -162,10 +169,10 @@ function createPaymentTable() {
         let amountPrice = Number(amountPriceElement.innerHTML.slice(2));
         let excess = Math.round((event.currentTarget.value*price - amountPrice)*100)/100;
 
-        amountPriceElement.innerHTML = '$ '+ Math.round(price*event.currentTarget.value*100)/100;
+        amountPriceElement.innerHTML = '$ '+ (Math.round(price*event.currentTarget.value*100)/100).toFixed(2);
         let totalSumElement = currentProductElement.parentElement.parentElement.lastChild.lastChild;
         let totalSum = Number(totalSumElement.innerHTML.slice(2)); 
-        totalSumElement.innerHTML = '$ '+ Math.round((totalSum + excess)*100)/100;
+        totalSumElement.innerHTML = '$ '+ (Math.round((totalSum + excess)*100)/100).toFixed(2);
 
         let cartLocalDataProduct = localStorage.getItem("cartDataProduct");
         let arrCartLocalDataProduct = cartLocalDataProduct.split(',');
@@ -200,11 +207,11 @@ function createPaymentTable() {
         if (amount == 1) return;
         let amountPriceElement = this.parentElement.nextElementSibling;
         let amountPrice = Number(amountPriceElement.innerHTML.slice(2));
-        amountPriceElement.innerHTML = '$ '+ Math.round((amountPrice - amountPrice/amount)*100)/100;
+        amountPriceElement.innerHTML = '$ '+ (Math.round((amountPrice - amountPrice/amount)*100)/100).toFixed(2);
         amountElement.value = amount-1;
         let totalSumElement = currentProductElement.parentElement.parentElement.lastChild.lastChild;
         let totalSum = Number(totalSumElement.innerHTML.slice(2)); 
-        totalSumElement.innerHTML = '$ '+ Math.round((totalSum - amountPrice/amount)*100)/100;
+        totalSumElement.innerHTML = '$ '+ (Math.round((totalSum - amountPrice/amount)*100)/100).toFixed(2);
 
         let cartLocalData = localStorage.getItem("cartData");
         if (cartLocalData) {
@@ -231,11 +238,11 @@ function createPaymentTable() {
         if (amount == maxAmount) return;
         let amountPriceElement = this.parentElement.nextElementSibling;
         let amountPrice = Number(amountPriceElement.innerHTML.slice(2));
-        amountPriceElement.innerHTML = '$ '+ Math.round((amountPrice + amountPrice/amount)*100)/100;
+        amountPriceElement.innerHTML = '$ '+ (Math.round((amountPrice + amountPrice/amount)*100)/100).toFixed(2);
         amountElement.value = amount + 1;
         let totalSumElement = currentProductElement.parentElement.parentElement.lastChild.lastChild;
         let totalSum = Number(totalSumElement.innerHTML.slice(2)); 
-        totalSumElement.innerHTML = '$ '+  Math.round((totalSum + amountPrice/amount)*100)/100;
+        totalSumElement.innerHTML = '$ '+  (Math.round((totalSum + amountPrice/amount)*100)/100).toFixed(2);
 
         let cartLocalData = localStorage.getItem("cartData");
         if (cartLocalData) {
@@ -260,7 +267,7 @@ function createPaymentTable() {
         let amountPrice = Number(amountPriceElement.innerHTML.slice(2));
         let totalSumElement = currentProductElement.parentElement.parentElement.lastChild.lastChild;
         let totalSum = Number(totalSumElement.innerHTML.slice(2)); 
-        totalSumElement.innerHTML = '$ '+ Math.round((totalSum - amountPrice)*100)/100;
+        totalSumElement.innerHTML = '$ '+ (Math.round((totalSum - amountPrice)*100)/100).toFixed(2);
 
         let cartLocalData = localStorage.getItem("cartData");
         if (cartLocalData) {
@@ -359,10 +366,12 @@ function clearLocalStorage() {
         localStorage.removeItem("cartDataProduct");
         cartContainer.innerText = 0;
     };
+    d.getElementById('tablePay').remove();
     cartAnimate ();
 }
 
 function showTablePay() {
+    
     let darkLayer = document.createElement('div');
     darkLayer.id = 'shadow';
     document.body.appendChild(darkLayer);
@@ -391,7 +400,7 @@ function payOrder() {
     let apperPayOrder = () => {
         showBuy.style.cssText="top: 0; \
             transform: scale(1); \
-            transition: transform 5s; \
+            transition: transform 1s; \
             bottom: 0; \
         ";
     }; setTimeout(apperPayOrder, 500);

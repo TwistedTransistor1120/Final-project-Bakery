@@ -1,6 +1,7 @@
 document.getElementById('js-counter')
 .addEventListener('click', () => {
-    window.location='products.html';
+	sessionStorage.setItem("fromAnotherPage", "1"); 
+	window.location='products.html';
 });
 
 
@@ -161,3 +162,17 @@ for (let i=0; i<allYears.length; i++) {
 };
 
 
+const anchors = document.querySelectorAll('a[href*="#"]')
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (e) {
+	headerActiveClass.classList.toggle("nav_mobile");
+    e.preventDefault()
+    
+    const blockID = anchor.getAttribute('href')
+    
+    document.querySelector('' + blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    })
+  })
+}

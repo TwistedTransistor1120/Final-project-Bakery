@@ -1,10 +1,3 @@
-.counter {
-    cursor: pointer;
-}
-
-
-
-
 /*main________________________________________________*/
 .main {
     margin-top: 67px;
@@ -19,11 +12,7 @@
 .carousel {
     position: relative;
     overflow: hidden;
-    /*height: calc(100vh - 87px); */
-    
-   
-    
-   
+  
 }
 
 
@@ -330,6 +319,80 @@
     color: #c9780f;
 }
 
+
+.delivery {
+    margin: 0 20px;
+}
+.deliveryText {
+    font-family: 'Kaushan Script', cursive;
+    margin-bottom: 20px;
+}
+
+.deliveryTable {
+    border-collapse: collapse;
+    border: 1px solid #c9780f;
+    overflow: hidden;
+}
+@media (max-width: 500px) {
+    .deliveryTable {
+        font-size: .8rem;
+        
+    }
+    .delivery {
+        margin: 0 5px;
+    }
+}
+.deliveryTable .cities {
+    font-weight: normal;
+}
+.deliveryTable th, .deliveryTable td {
+    border: 1px solid #c9780f;
+    padding: 5px 8px 5px 12px;
+    font-family: 'Kaushan Script', cursive;
+    /*background-color: white;*/
+    position: relative;
+    transition: all .4s;
+    
+}
+.deliveryTable thead th, .deliveryTable thead td{
+    background-color: orangered;
+    color: wheat;
+}
+.deliveryTable td:hover::after, .deliveryTable thead th:not(:first-child):hover::after {
+    content: "";
+    position: absolute;
+    background-color: #f7e49a;
+    z-index: -1;
+    width: 100%;
+    height: 10000px;
+    left: 0;
+    top: -5000px;
+  
+}
+
+.deliveryTable td:hover::before, .deliveryTable tbody th:hover::after {
+    content: "";
+    position: absolute;
+    background-color: #f7e49a;
+    z-index: -1;
+    width: 10000px;
+    height: 100%;
+    left: -5000px;
+    top: 0;
+   
+}
+.deliveryTable td:hover, .deliveryTable th:hover {
+    color: orangered;
+    transition: all .4s;
+}
+
+
+
+
+
+
+
+
 .inNumbers  {
     margin: 30px 0;
 }
@@ -337,7 +400,8 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    width: 100%;
+    width: 70%;
+    margin: 0 auto;
 }
 
 .block {
@@ -349,6 +413,13 @@
     border: 1px solid #c9780f;
     background-color: #f7e49a;
     transition: transform .4s linear;
+}
+@media (max-width: 580px) {
+    .wrapperNumbers {
+        width: 100%;
+        
+    }
+    
 }
 @media (max-width: 400px) {
     .wrapperNumbers {

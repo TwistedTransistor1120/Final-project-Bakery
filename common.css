@@ -58,11 +58,18 @@ button {
     border: none;
 }
 
+.counter {
+    cursor: pointer;
+}
+
+
 .topHeaders, .topHeadersSmall {
     font-family: 'Kaushan Script', cursive;
     text-align: center;
     text-transform: uppercase;
-    font-size: 1.0rem;
+    font-size: 2rem;
+    color: #c43b05;
+    font-weight: 1000;
 }
 .topHeadersSmall {
     text-transform: none;
@@ -106,7 +113,7 @@ header {
     right: -300%;
     color: #7c7f81;
 }
-@media all and (min-width: 570px) {
+@media all and (min-width: 620px) {
     .headerTop .address {
         position: static;
         width: auto;
@@ -131,7 +138,7 @@ header {
     max-width: 150px;
     
 }
-@media (max-width: 570px) {
+@media (max-width: 620px) {
     .navLine picture {
         min-width: 100px;
         max-width: 100px;
@@ -174,16 +181,16 @@ header {
         transform: skew(0,0)
     }
     32.5% {
-        transform: skew(-20deg, 20deg)
+        transform: skew(-10deg, 10deg)
     }
     35% {
-        transform: skew(20deg, -20deg)
+        transform: skew(10deg, -10deg)
     }
     37.5% {
-        transform: skew(-20deg, 20deg)
+        transform: skew(-10deg, 10deg)
     }
     40% {
-        transform: skew(20deg, -20deg)
+        transform: skew(10deg, -10deg)
     }
     42.5% {
         transform: skew(0,0) scale(1)
@@ -211,7 +218,7 @@ header {
     left: 0;
     z-index: 1000;
 }
-@media all and (min-width: 570px) {
+@media all and (min-width: 620px) {
     .mainNav {
         position: static;
         width: auto;
@@ -231,7 +238,7 @@ header {
     
 }
 
-@media all and (min-width: 570px) {
+@media all and (min-width: 620px) {
     .list {
         display: flex;
         flex-flow: row wrap;
@@ -257,7 +264,7 @@ header {
     bottom: -2px;
     left: 50%; 
 }
-@media all and (min-width: 570px) {
+@media all and (min-width: 620px) {
     .list li:not(:last-child)::before {
         display: none;
     }
@@ -277,7 +284,7 @@ header {
 .mainNav ul li a {
     transition: all .3s ease;
 }
-@media all and (min-width: 570px) {
+@media all and (min-width: 620px) {
     .mainNav ul li {
         padding-top: 0px;
         padding-bottom: 0px;
@@ -328,7 +335,7 @@ header {
     cursor: pointer;
     background: none;
 }
-@media all and (min-width: 570px) {
+@media all and (min-width: 620px) {
     .hamburger {
         display: none;
     }
@@ -392,7 +399,7 @@ footer span {
     display: block;
     text-align: center;
 }
-@media (min-width: 570px) {
+@media (min-width: 620px) {
     .signs {
         justify-content: center;
         

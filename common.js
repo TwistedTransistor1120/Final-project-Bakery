@@ -1,13 +1,11 @@
-let headerActiveClass = document.getElementById("nav");
-
+let d = document,
+    headerActiveClass = document.getElementById("nav");
 
 document.getElementById ("jsBurger")
   .addEventListener("click", function() {
       headerActiveClass.classList.toggle("nav_mobile");
-       
-
-
   });
+
 window.addEventListener("resize", function() {
     if(window.innerWidth >= 510) {
         headerActiveClass.classList.remove("nav_mobile")
@@ -15,14 +13,11 @@ window.addEventListener("resize", function() {
 });
 
 let cartContainer = document.getElementById('js-cart');
-    
     cart = document.getElementById('js-counter');
-
-    cartInitialValue = localStorage.getItem("cartData");
-   
-    if(cartInitialValue) {
-        cartContainer.innerText = cartInitialValue;
-    } else cartContainer.innerText = 0;
+    cartInitialValue = localStorage.getItem("cartData");    
+if(cartInitialValue) {
+    cartContainer.innerText = cartInitialValue;
+} else cartContainer.innerText = 0;
 
 cartAnimate();
 
